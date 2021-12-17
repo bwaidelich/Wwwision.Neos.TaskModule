@@ -1,0 +1,8 @@
+<f:switch expression="{status}">
+    <f:case value="planned"><span class="neos-label">{status}</span></f:case>
+    <f:case value="running"><span class="neos-label-info">{status}</span></f:case>
+    <f:case value="completed"><span class="neos-label-success">{status}</span></f:case>
+    <f:case value="aborted"><span class="neos-label-warning">{status}</span></f:case>
+    <f:case value="failed"><span class="neos-label-important">{status}</span></f:case>
+    <f:defaultCase>{status}</f:defaultCase>
+</f:switch>

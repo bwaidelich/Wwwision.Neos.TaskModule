@@ -1,0 +1,25 @@
+{
+    "description": "Neos Backend Module for the Flowpack.Task scheduler",
+    "type": "neos-package",
+    "name": "wwwision/neos-taskmodule",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "neos/neos": "^7.0",
+        "flowpack/task": "^1.1",
+        "lorisleiva/cron-translator": "^0.3"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wwwision\\Neos\\TaskModule\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Wwwision.Neos.TaskModule"
+        }
+    }
+}

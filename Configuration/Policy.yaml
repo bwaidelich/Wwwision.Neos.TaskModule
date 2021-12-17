@@ -1,0 +1,19 @@
+privilegeTargets:
+  'Neos\Neos\Security\Authorization\Privilege\ModulePrivilege':
+    'Wwwision.Neos.TaskModule:Module':
+      matcher: 'administration/tasks'
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Wwwision.Neos.TaskModule:Tasks.RunAll':
+      matcher: 'method(Wwwision\Neos\TaskModule\Controller\TaskController->runAllAction())'
+    'Wwwision.Neos.TaskModule:Tasks.RunSingle':
+      matcher: 'method(Wwwision\Neos\TaskModule\Controller\TaskController->runSingleAction())'
+
+roles:
+  'Neos.Neos:Administrator':
+    privileges:
+      - privilegeTarget: 'Wwwision.Neos.TaskModule:Module'
+        permission: GRANT
+      - privilegeTarget: 'Wwwision.Neos.TaskModule:Tasks.RunSingle'
+        permission: GRANT
+      - privilegeTarget: 'Wwwision.Neos.TaskModule:Tasks.RunAll'
+        permission: GRANT

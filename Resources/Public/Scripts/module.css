@@ -1,0 +1,14 @@
+.neos h2 {
+    font-size: 150%;
+    padding: .5em 0 1em 0;
+}
+.neos h3 {
+    font-size: 120%;
+    padding: 0 0 1em 0;
+}
+.neos pre {
+    background: #3f3f3f;
+    overflow: auto;
+    max-height: 350px;
+    line-height: 1.5em;
+}

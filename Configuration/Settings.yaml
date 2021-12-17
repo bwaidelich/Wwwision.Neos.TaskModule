@@ -1,0 +1,16 @@
+Neos:
+  Neos:
+    modules:
+      'administration':
+        submodules:
+          'tasks':
+            label: 'Tasks'
+            controller: 'Wwwision\Neos\TaskModule\Controller\TaskController'
+            description: 'Manage and execute scheduled tasks'
+            icon: 'fas fa-tasks'
+            additionalResources:
+              styleSheets:
+                - 'resource://Wwwision.Neos.TaskModule/Public/Scripts/module.css'
+              javaScripts:
+                - 'resource://Wwwision.Neos.TaskModule/Public/Scripts/timeago.min.js'
+                - 'resource://Wwwision.Neos.TaskModule/Public/Scripts/module.js'

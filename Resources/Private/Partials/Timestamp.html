@@ -1,0 +1,3 @@
+<f:if condition="{dateTime}" else="-">
+    <time datetime="{dateTime -> f:format.date(format: 'Y-m-d\TH:i:sP')}" title="{dateTime -> f:format.date(format: 'Y-m-d H:i:s')}">{dateTime -> f:format.date(format: 'Y-m-d H:i:s')}</time>
+</f:if>

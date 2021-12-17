@@ -1,0 +1,62 @@
+{namespace t=Wwwision\Neos\TaskModule\ViewHelpers}
+<f:layout name="Module"/>
+<f:section name="Content">
+    <div class="neos-row-fluid">
+        <div class="neos-span12">
+            <h2>Tasks</h2>
+        </div>
+        <f:if condition="{taskDescriptors}" else="There are no configured tasks yet">
+            <table class="neos-table neos-table-matchday-details">
+                <thead>
+                <tr>
+                    <th>Identifier</th>
+                    <th>Label</th>
+                    <th>Schedule</th>
+                    <th>Latest Execution</th>
+                    <th>Latest Status</th>
+                    <th>Next Execution</th>
+                </tr>
+                </thead>
+                <tbody>
+                <f:for each="{taskDescriptors}" as="taskDescriptor">
+                    <tr>
+                        <td>
+                            {taskDescriptor.task.identifier}
+                        </td>
+                        <td>
+                            {taskDescriptor.task.label}
+                        </td>
+                        <td title="{taskDescriptor.task.cronExpression.expression}">
+                            {taskDescriptor.task.cronExpression.expression -> t:format.cronExpression()}
+                        </td>
+                        <td>
+                            <f:render partial="Timestamp" arguments="{dateTime: taskDescriptor.latestExecution.endTime}" />
+                        </td>
+                        <td>
+                            <f:render partial="TaskStatus" arguments="{status: taskDescriptor.latestExecution.status}" />
+                        </td>
+                        <td>
+                            <f:render partial="Timestamp" arguments="{dateTime: taskDescriptor.nextExecution.scheduleTime}" />
+                            <f:if condition="{taskDescriptor.delayed}"><span class="neos-label-warning">delayed</span></f:if>
+                        </td>
+                        <td class="neos-action">
+                            <div class="neos-pull-right">
+                                <f:link.action action="show" arguments="{taskId: taskDescriptor.task.identifier}" class="neos-button" title="Mehr Details">
+                                    <i class="fas fa-info-circle icon-white"></i>
+                                </f:link.action>
+                            </div>
+                        </td>
+                    </tr>
+                </f:for>
+                </tbody>
+            </table>
+        </f:if>
+    </div>
+</f:section>
+<f:section name="Footer">
+    <f:security.ifAccess privilegeTarget="Wwwision.Neos.TaskModule:Tasks.RunAll">
+        <f:form action="runAll" arguments="{taskId: task.identifier}" additionalAttributes="{style: 'display: inline'}">
+            <f:form.submit value="Run all tasks" class="neos-button neos-button-primary"/>
+        </f:form>
+    </f:security.ifAccess>
+</f:section>
