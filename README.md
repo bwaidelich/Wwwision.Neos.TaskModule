@@ -32,6 +32,12 @@ This would grant uses with the role `Some.Package:SomeRole` access to the module
 To allow users to schedule individual or all tasks, the `Wwwision.Neos.TaskModule:Tasks.RunSingle`
 and/or `Wwwision.Neos.TaskModule:Tasks.RunAll` privilege targets can be granted, too.
 
+
+## Acknowledgements
+
+The development of this package was partly sponsored by [brandung GmbH](https://www.brandung.de).
+Thank you for supporting Open Source development!
+
 ## Contribution
 
 Contributions in the form of issues or pull requests are highly appreciated.
