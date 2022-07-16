@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Wwwision.Neos.TaskModule" source-language="de" target-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="headline">
+        <source>Tasks</source>
+        <target>Tasks</target>
+      </trans-unit>
+      <trans-unit id="noTasksConfigured">
+        <source>Es sind noch keine Aufgaben konfiguriert</source>
+        <target>There are no configured tasks yet</target>
+      </trans-unit>
+      <trans-unit id="table.identifier">
+        <source>Bezeichner</source>
+        <target>Identifier</target>
+      </trans-unit>
+      <trans-unit id="table.label">
+        <source>Label</source>
+        <target>Label</target>
+      </trans-unit>
+      <trans-unit id="table.schedule">
+        <source>Zeitplan</source>
+        <target>Schedule</target>
+      </trans-unit>
+      <trans-unit id="table.latestExecution">
+        <source>Letzte Ausführung</source>
+        <target>Latest Execution</target>
+      </trans-unit>
+      <trans-unit id="table.latestStatus">
+        <source>Letzter Status</source>
+        <target>Latest Status</target>
+      </trans-unit>
+      <trans-unit id="table.nextExecution">
+        <source>Nächste Ausführung</source>
+        <target>Next Execution</target>
+      </trans-unit>
+      <trans-unit id="table.firstRun">
+        <source>Erste Ausführung</source>
+        <target>First run</target>
+      </trans-unit>
+      <trans-unit id="status.delayed">
+        <source>verzögert</source>
+        <target>delayed</target>
+      </trans-unit>
+      <trans-unit id="button.details">
+        <source>Mehr Details</source>
+        <target>More Details</target>
+      </trans-unit>
+      <trans-unit id="button.runall">
+        <source>Alle tasks ausführen</source>
+        <target>Run all tasks</target>
+      </trans-unit>
+      <trans-unit id="task.executions">
+        <source>Task Ausführungen</source>
+        <target>Task Executions</target>
+      </trans-unit>
+      <trans-unit id="execution">
+        <source>Ausführung</source>
+        <target>Execution</target>
+      </trans-unit>
+      <trans-unit id="result">
+        <source>Ergebnis</source>
+        <target>Result</target>
+      </trans-unit>
+      <trans-unit id="exception">
+        <source>Ausnahme</source>
+        <target>Exception</target>
+      </trans-unit>
+      <trans-unit id="buttonBack.Desc">
+        <source>Zur Übersicht</source>
+        <target>Navigate back to overview</target>
+      </trans-unit>
+      <trans-unit id="buttonBack">
+        <source>Zurück</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="runTask">
+        <source>Task Ausführen</source>
+        <target>Run task</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
