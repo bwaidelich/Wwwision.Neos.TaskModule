@@ -1,20 +1,21 @@
 {namespace t=Wwwision\Neos\TaskModule\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
 <f:layout name="Module"/>
 <f:section name="Content">
     <div class="neos-row-fluid">
         <div class="neos-span12">
-            <h2>Tasks</h2>
+						<h2><f:translate id="headline" package="Wwwision.Neos.TaskModule" source="Main"/></h2>
         </div>
-        <f:if condition="{taskDescriptors}" else="There are no configured tasks yet">
+        <f:if condition="{taskDescriptors}" else="{neos:backend.translate(id: 'noTasksConfigured', source: 'Main', package: 'Wwwision.Neos.TaskModule')}">
             <table class="neos-table neos-table-matchday-details">
                 <thead>
                 <tr>
-                    <th>Identifier</th>
-                    <th>Label</th>
-                    <th>Schedule</th>
-                    <th>Latest Execution</th>
-                    <th>Latest Status</th>
-                    <th>Next Execution</th>
+                    <th><f:translate id="table.identifier" package="Wwwision.Neos.TaskModule" source="Main"/></th>
+                    <th><f:translate id="table.label" package="Wwwision.Neos.TaskModule" source="Main"/></th>
+                    <th><f:translate id="table.schedule" package="Wwwision.Neos.TaskModule" source="Main"/></th>
+                    <th><f:translate id="table.latestExecution" package="Wwwision.Neos.TaskModule" source="Main"/></th>
+                    <th><f:translate id="table.latestStatus" package="Wwwision.Neos.TaskModule" source="Main"/></th>
+                    <th><f:translate id="table.nextExecution" package="Wwwision.Neos.TaskModule" source="Main"/></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,11 +38,11 @@
                         </td>
                         <td>
                             <f:render partial="Timestamp" arguments="{dateTime: taskDescriptor.nextExecution.scheduleTime}" />
-                            <f:if condition="{taskDescriptor.delayed}"><span class="neos-label-warning">delayed</span></f:if>
+                            <f:if condition="{taskDescriptor.delayed}"><span class="neos-label-warning"><f:translate id="status.delayed" package="Wwwision.Neos.TaskModule" source="Main"/></span></f:if>
                         </td>
                         <td class="neos-action">
                             <div class="neos-pull-right">
-                                <f:link.action action="show" arguments="{taskId: taskDescriptor.task.identifier}" class="neos-button" title="Mehr Details">
+                                <f:link.action action="show" arguments="{taskId: taskDescriptor.task.identifier}" class="neos-button" title="{neos:backend.translate(id: 'button.details', source: 'Main', package: 'Wwwision.Neos.TaskModule')}">
                                     <i class="fas fa-info-circle icon-white"></i>
                                 </f:link.action>
                             </div>
@@ -56,7 +57,7 @@
 <f:section name="Footer">
     <f:security.ifAccess privilegeTarget="Wwwision.Neos.TaskModule:Tasks.RunAll">
         <f:form action="runAll" arguments="{taskId: task.identifier}" additionalAttributes="{style: 'display: inline'}">
-            <f:form.submit value="Run all tasks" class="neos-button neos-button-primary"/>
+            <f:form.submit value="{neos:backend.translate(id: 'button.runall', source: 'Main', package: 'Wwwision.Neos.TaskModule')}" class="neos-button neos-button-primary"/>
         </f:form>
     </f:security.ifAccess>
 </f:section>

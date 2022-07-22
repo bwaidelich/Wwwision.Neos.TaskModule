@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Wwwision.Neos.TaskModule" source-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="headline">
+        <source>Tasks</source>
+      </trans-unit>
+      <trans-unit id="noTasksConfigured">
+        <source>Es sind noch keine Aufgaben konfiguriert</source>
+      </trans-unit>
+      <trans-unit id="table.identifier">
+        <source>Bezeichner</source>
+      </trans-unit>
+      <trans-unit id="table.label">
+        <source>Label</source>
+      </trans-unit>
+      <trans-unit id="table.schedule">
+        <source>Zeitplan</source>
+      </trans-unit>
+      <trans-unit id="table.latestExecution">
+        <source>Letzte Ausführung</source>
+      </trans-unit>
+      <trans-unit id="table.latestStatus">
+        <source>Letzter Status</source>
+      </trans-unit>
+      <trans-unit id="table.nextExecution">
+        <source>Nächste Ausführung</source>
+      </trans-unit>
+      <trans-unit id="table.firstRun">
+        <source>Erste Ausführung</source>
+      </trans-unit>
+      <trans-unit id="status.delayed">
+        <source>verzögert</source>
+      </trans-unit>
+      <trans-unit id="button.details">
+        <source>Mehr Details</source>
+      </trans-unit>
+      <trans-unit id="button.runall">
+        <source>Alle tasks ausführen</source>
+      </trans-unit>
+      <trans-unit id="task.executions">
+        <source>Task Ausführungen</source>
+      </trans-unit>
+      <trans-unit id="execution">
+        <source>Ausführung</source>
+      </trans-unit>
+      <trans-unit id="result">
+        <source>Ergebnis</source>
+      </trans-unit>
+      <trans-unit id="exception">
+        <source>Ausnahme</source>
+      </trans-unit>
+      <trans-unit id="buttonBack.Desc">
+        <source>Zur Übersicht</source>
+      </trans-unit>
+      <trans-unit id="buttonBack">
+        <source>Zurück</source>
+      </trans-unit>
+      <trans-unit id="runTask">
+        <source>Task Ausführen</source>
+      </trans-unit>
+      <trans-unit id="noTasksRunYet">
+        <source>Dieser Task ist noch nicht ausgeführt worden.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
