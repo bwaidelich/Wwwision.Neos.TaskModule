@@ -59,6 +59,9 @@
       <trans-unit id="runTask">
         <source>Task Ausführen</source>
       </trans-unit>
+      <trans-unit id="noTasksRunYet">
+        <source>Dieser Task ist noch nicht ausgeführt worden.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

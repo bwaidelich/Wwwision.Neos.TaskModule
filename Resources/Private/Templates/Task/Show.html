@@ -59,7 +59,7 @@
         <tr>
             <th colspan="3"><h2><f:translate id="task.executions" package="Wwwision.Neos.TaskModule" source="Main"/></h2></th>
         </tr>
-        <f:if condition="{taskExecutions}" else="<tr><td colspan='2'><i>{neos:backend.translate(id: 'noTasksConfigured', source: 'Main', package: 'Wwwision.Neos.TaskModule')}</i></td></tr>">
+        <f:if condition="{taskExecutions}" else="<tr><td colspan='2'><i>{neos:backend.translate(id: 'noTasksRunYet', source: 'Main', package: 'Wwwision.Neos.TaskModule')}</i></td></tr>">
             <f:for each="{taskExecutions}" as="execution">
                 <tr>
                     <td><f:translate id="execution" package="Wwwision.Neos.TaskModule" source="Main"/></td>

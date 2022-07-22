@@ -78,6 +78,10 @@
         <source>Task Ausführen</source>
         <target>Run task</target>
       </trans-unit>
+      <trans-unit id="noTasksRunYet">
+        <source>Dieser Task ist noch nicht ausgeführt worden.</source>
+        <target>This task has not been executed yet.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
