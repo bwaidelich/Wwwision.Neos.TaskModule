@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.4",
-        "neos/neos": "^7.0",
+        "neos/neos": "^7.0 || ^8.0",
         "flowpack/task": "^1.1",
         "lorisleiva/cron-translator": "^0.3"
     },
