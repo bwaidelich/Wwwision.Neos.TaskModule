@@ -1,7 +1,8 @@
 {namespace t=Wwwision\Neos\TaskModule\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
 <f:layout name="Module"/>
 <f:section name="Content">
-    <h2>Task "{task.identifier}"</h2>
+    <h2><f:translate id="table.identifier" package="Wwwision.Neos.TaskModule" source="Main"/> "{task.identifier}"</h2>
     <h3>{task.description}</h3>
     <table class="neos-table">
         <tbody>
@@ -12,19 +13,19 @@
             </td>
         </tr>
         <tr>
-            <td><b>First run (configuration)</b></td>
+            <td><b><f:translate id="table.firstRun" package="Wwwision.Neos.TaskModule" source="Main"/> (configuration)</b></td>
             <td colspan="2">
                 <f:render partial="Timestamp" arguments="{dateTime: task.firstExecution}"/>
             </td>
         </tr>
         <tr>
-            <td><b>Last run (configuration)</b></td>
+            <td><b><f:translate id="table.latestExecution" package="Wwwision.Neos.TaskModule" source="Main"/> (configuration)</b></td>
             <td colspan="2">
                 <f:render partial="Timestamp" arguments="{dateTime: task.lastExecution}"/>
             </td>
         </tr>
         <tr>
-            <td><b>Latest execution</b></td>
+            <td><b><f:translate id="table.latestExecution" package="Wwwision.Neos.TaskModule" source="Main"/></b></td>
             <td colspan="2">
                 <f:render partial="Timestamp" arguments="{dateTime: latestExecution.endTime}"/>
                 <f:render partial="TaskStatus" arguments="{status: latestExecution.status}"/>
@@ -49,31 +50,31 @@
             </tr>
         </f:if>
         <tr>
-            <td><b>Next execution</b></td>
+            <td><b><f:translate id="table.nextExecution" package="Wwwision.Neos.TaskModule" source="Main"/></b></td>
             <td colspan="2">
                 <f:render partial="Timestamp" arguments="{dateTime: nextExecution.scheduleTime}"/>
-                <f:if condition="{delayed}"><span class="neos-label-warning">delayed</span></f:if>
+                <f:if condition="{delayed}"><span class="neos-label-warning"><f:translate id="status.delayed" package="Wwwision.Neos.TaskModule" source="Main"/></span></f:if>
             </td>
         </tr>
         <tr>
-            <th colspan="3"><h2>Task Executions</h2></th>
+            <th colspan="3"><h2><f:translate id="task.executions" package="Wwwision.Neos.TaskModule" source="Main"/></h2></th>
         </tr>
-        <f:if condition="{taskExecutions}" else="<tr><td colspan='2'><i>This task has not been executed yet.</i></td></tr>">
+        <f:if condition="{taskExecutions}" else="<tr><td colspan='2'><i>{neos:backend.translate(id: 'noTasksRunYet', source: 'Main', package: 'Wwwision.Neos.TaskModule')}</i></td></tr>">
             <f:for each="{taskExecutions}" as="execution">
                 <tr>
-                    <td>Execution</td>
+                    <td><f:translate id="execution" package="Wwwision.Neos.TaskModule" source="Main"/></td>
                     <td>
                         <f:render partial="Timestamp" arguments="{dateTime: execution.scheduleTime}"/>
                     </td>
                     <td>{execution.duration -> f:format.number(decimals: 2)}s</td>
                 </tr>
                 <tr>
-                    <td><b>Result</b></td>
+                    <td><b><f:translate id="result" package="Wwwision.Neos.TaskModule" source="Main"/></b></td>
                     <td colspan="2">{f:if(condition: execution.result, then: '{execution.result}', else: '-')}</td>
                 </tr>
                 <f:if condition="{execution.exception}">
                     <tr>
-                        <td><b>Exception</b></td>
+                        <td><b><f:translate id="exception" package="Wwwision.Neos.TaskModule" source="Main"/></b></td>
                         <td>{execution.exception -> f:format.crop(maxCharacters: '100')}</td>
                         <td class="neos-priority1 neos-aRight">
                             <i class="fold-toggle fas fa-chevron-down icon-white" data-toggle="fold-exception"></i>
@@ -89,10 +90,10 @@
     </table>
 </f:section>
 <f:section name="Footer">
-    <f:link.action action="index" class="neos-button" title="Navigate back to overview">Back</f:link.action>
+    <f:link.action action="index" class="neos-button" title="{neos:backend.translate(id: 'buttonBack.Desc', source: 'Main', package: 'Wwwision.Neos.TaskModule')}"><f:translate id="buttonBack" package="Wwwision.Neos.TaskModule" source="Main"/></f:link.action>
     <f:security.ifAccess privilegeTarget="Wwwision.Neos.TaskModule:Tasks.RunSingle">
         <f:form action="runSingle" arguments="{taskId: task.identifier}" additionalAttributes="{style: 'display: inline'}">
-            <f:form.submit value="Run task" class="neos-button neos-button-primary"/>
+            <f:form.submit value="{neos:backend.translate(id: 'runTask', source: 'Main', package: 'Wwwision.Neos.TaskModule')}" class="neos-button neos-button-primary"/>
         </f:form>
     </f:security.ifAccess>
 </f:section>
